@@ -9,7 +9,7 @@ const THRESHOLD = 150
 type T = object
 
 interface WithPullToRefreshProps {
-  spinnerStyle: 'MATERIAL' | 'IOS'
+  spinnerStyle?: 'MATERIAL' | 'IOS'
   customClass?: string
   scrollable?: React.ReactNode
   threshold?: number

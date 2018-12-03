@@ -1,11 +1,10 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 module.exports = {
-    mode: process.env.NODE_ENV !== 'prod' ? 'development' : 'production',
+    mode: 'development',
     entry: {
-        main: ['./src/index.tsx'],
-        default: ['./src/styles/default.module.scss'],
-        ios: ['./src/styles/ios.module.scss']
+        default: ['./src/playground/index.tsx', './src/styles/default.module.scss'],
+        ios: ['./src/playground/ios.tsx', './src/styles/ios.module.scss']
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", "*.scss"]
@@ -18,7 +17,7 @@ module.exports = {
             {
                 test: /\.module\.(scss|sass)$/,
                 use: [
-                    process.env.NODE_ENV !== 'prod' ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader"
                 ]

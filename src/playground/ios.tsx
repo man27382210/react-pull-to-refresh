@@ -14,4 +14,4 @@ const refresh = () => {
     setTimeout(resolve, magicSec)
   })
 }
-ReactDOM.render(<App refresh={refresh} />, document.getElementById('app'))
+ReactDOM.render(<App spinnerStyle='IOS' refresh={refresh} />, document.getElementById('app'))
